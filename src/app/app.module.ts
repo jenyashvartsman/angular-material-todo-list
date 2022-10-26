@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderModule } from './components/header/header.module';
+import { TodosListModule } from './components/todos-list/todos-list.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import { HeaderModule } from './components/header/header.module';
     BrowserAnimationsModule,
     HttpClientModule,
     HeaderModule,
+    TodosListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

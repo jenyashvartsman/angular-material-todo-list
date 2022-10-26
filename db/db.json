@@ -3,14 +3,14 @@
     {
       "id": "uuid-1",
       "title": "Create project",
-      "Description": "Create Angular project with Material",
+      "description": "Create Angular project with Material",
       "createdAt": "2022-10-23T18:22:03.764Z",
       "isComplete": true
     },
     {
       "id": "uuid-2",
       "title": "Add json-server & API service",
-      "Description": "Install json-server and create a service to comunicate with it",
+      "description": "Install json-server and create a service to comunicate with it",
       "createdAt": "2022-10-23T18:22:03.764Z",
       "isComplete": true
     },
@@ -24,7 +24,7 @@
       "id": "uuid-4",
       "title": "Add todos list",
       "createdAt": "2022-10-23T18:22:03.764Z",
-      "isComplete": false
+      "isComplete": true
     },
     {
       "id": "uuid-5",
