@@ -1,16 +1,34 @@
 <div class="todos-list-wrapper">
+  <!-- search -->
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Search</mat-label>
+    <input matInput type="text" [(ngModel)]="search" />
+    <button
+      *ngIf="search"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="search = ''"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
   <!-- list -->
-  <mat-card *ngFor="let todo of todos$ | async">
+  <mat-card *ngFor="let todo of (todos$ | async) || [] | filterTodos: search">
     <!-- header -->
     <mat-card-header>
-      <mat-icon
-        *ngIf="todo.isComplete"
-        aria-hidden="false"
-        aria-label="Example home icon"
-        fontIcon="check_circle"
-        [color]="todo.isComplete ? 'primary' : 'accent'"
-      ></mat-icon>
-      <mat-card-title>{{ todo.title }}</mat-card-title>
+      <mat-card-title>
+        {{ todo.title }}
+        <mat-icon
+          *ngIf="todo.isComplete"
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="check_circle"
+          [color]="todo.isComplete ? 'primary' : 'accent'"
+        ></mat-icon>
+      </mat-card-title>
+      <mat-card-subtitle>{{ todo.createdAt | date }}</mat-card-subtitle>
     </mat-card-header>
 
     <!--  content  -->
@@ -22,5 +40,10 @@
       <button mat-button color="primary">Edit</button>
       <button mat-button color="warn">Delete</button>
     </mat-card-actions>
+  </mat-card>
+
+  <!-- no result -->
+  <mat-card *ngIf="((todos$ | async) || [] | filterTodos: search).length === 0">
+    No todos found
   </mat-card>
 </div>

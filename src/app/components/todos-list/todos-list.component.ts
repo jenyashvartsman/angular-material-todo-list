@@ -10,6 +10,7 @@ import { Todo } from 'src/app/core/types/todo.type';
 })
 export class TodosListComponent implements OnInit {
   todos$?: Observable<Todo[]>;
+  search = '';
 
   constructor(private readonly todosServise: TodosService) {}
 
