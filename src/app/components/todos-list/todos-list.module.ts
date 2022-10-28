@@ -7,6 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { PipesModule } from 'src/app/pipes/pipes.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [TodosListComponent],
@@ -18,6 +20,8 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
     MatInputModule,
     FormsModule,
     PipesModule,
+    MatDialogModule,
+    MatSnackBarModule,
   ],
   exports: [TodosListComponent],
 })
